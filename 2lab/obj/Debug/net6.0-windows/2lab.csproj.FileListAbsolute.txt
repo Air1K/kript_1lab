@@ -1,0 +1,17 @@
+C:\Users\razin\source\repos\2lab\2lab\bin\Debug\net6.0-windows\2lab.exe
+C:\Users\razin\source\repos\2lab\2lab\bin\Debug\net6.0-windows\2lab.deps.json
+C:\Users\razin\source\repos\2lab\2lab\bin\Debug\net6.0-windows\2lab.runtimeconfig.json
+C:\Users\razin\source\repos\2lab\2lab\bin\Debug\net6.0-windows\2lab.dll
+C:\Users\razin\source\repos\2lab\2lab\bin\Debug\net6.0-windows\2lab.pdb
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\2lab.csproj.AssemblyReference.cache
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\_2lab.Form1.resources
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\2lab.csproj.GenerateResource.cache
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\2lab.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\2lab.AssemblyInfoInputs.cache
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\2lab.AssemblyInfo.cs
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\2lab.csproj.CoreCompileInputs.cache
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\2lab.dll
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\refint\2lab.dll
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\2lab.pdb
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\2lab.genruntimeconfig.cache
+C:\Users\razin\source\repos\2lab\2lab\obj\Debug\net6.0-windows\ref\2lab.dll
