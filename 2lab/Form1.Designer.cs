@@ -35,6 +35,9 @@
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
             comboBox1 = new ComboBox();
+            button3 = new Button();
+            button4 = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -88,11 +91,43 @@
             comboBox1.TabIndex = 4;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
+            // button3
+            // 
+            button3.Location = new Point(223, 153);
+            button3.Name = "button3";
+            button3.Size = new Size(125, 29);
+            button3.TabIndex = 6;
+            button3.Text = "Расшифровать";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(223, 119);
+            button4.Name = "button4";
+            button4.Size = new Size(125, 29);
+            button4.TabIndex = 5;
+            button4.Text = "Шифровать";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(223, 29);
+            label2.Name = "label2";
+            label2.Size = new Size(95, 20);
+            label2.TabIndex = 7;
+            label2.Text = "Generate key";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(242, 198);
+            ClientSize = new Size(800, 385);
+            Controls.Add(label2);
+            Controls.Add(button3);
+            Controls.Add(button4);
             Controls.Add(comboBox1);
             Controls.Add(label1);
             Controls.Add(textBox1);
@@ -114,5 +149,8 @@
         private SaveFileDialog saveFileDialog1;
         private OpenFileDialog openFileDialog1;
         private ComboBox comboBox1;
+        private Button button3;
+        private Button button4;
+        private Label label2;
     }
 }

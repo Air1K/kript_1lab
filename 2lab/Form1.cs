@@ -39,25 +39,25 @@ namespace _2lab
         static string values = "";
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             sKey = textBox1.Text;
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string source = openFileDialog1.FileName;
+                if (values == "AES") { saveFileDialog1.Filter = "enc files |*.enc"; }
+                else { saveFileDialog1.Filter = "des files |*.des"; }
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    string source = openFileDialog1.FileName;
-                    if(values == "AES") { saveFileDialog1.Filter = "enc files |*.enc"; }
-                    else { saveFileDialog1.Filter = "des files |*.des"; }
-                    
-                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    string destination = saveFileDialog1.FileName; // Переменная в которую сохроняем зашифрованный файл
+                    if (values == "AES")
                     {
-                        string destination = saveFileDialog1.FileName; // Переменная в которую сохроняем зашифрованный файл
-                        if (values == "AES")
-                        {
-                            EncryptFileAes(source, destination, ivSecret, sKey);
-                        }
-                        else { EncryptFile(source, destination, sKey); }
-                        
+                        EncryptFileAes(source, destination, ivSecret, sKey);
                     }
+                    else { EncryptFile(source, destination, sKey); }
+
                 }
+            }
         }
         private void EncryptFileAes(string source, string destination, string ivSecret, string sKey)
         {
@@ -140,7 +140,7 @@ namespace _2lab
             sKey = textBox1.Text;
             if (values == "AES") { openFileDialog1.Filter = "enc files |*.enc"; }
             else { openFileDialog1.Filter = "des files|*.des"; }
-            
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string source = openFileDialog1.FileName;
@@ -153,7 +153,7 @@ namespace _2lab
                         DecryptFileAes(source, destination, GetKey(sKey), GetKey(ivSecret));
                     }
                     else { DecryptFile(source, destination, sKey); }
-                    
+
                 }
             }
         }
@@ -183,6 +183,48 @@ namespace _2lab
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             values = comboBox1.Text;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using (var rijndael = System.Security.Cryptography.Rijndael.Create())
+            {
+                rijndael.GenerateKey();
+                sKey = Convert.ToBase64String(rijndael.Key);
+            }
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string source = openFileDialog1.FileName;
+                saveFileDialog1.Filter = "enc files |*.enc";
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string destination = saveFileDialog1.FileName; // Переменная в которую сохроняем зашифрованный файл
+
+                    EncryptFileAes(source, destination, ivSecret, sKey);
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+             openFileDialog1.Filter = "enc files |*.enc"; 
+          
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string source = openFileDialog1.FileName;
+                saveFileDialog1.Filter = "txt files |*.txt";
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string destination = saveFileDialog1.FileName; // Переменная в которую сохроняем зашифрованный файл
+                    
+                        DecryptFileAes(source, destination, GetKey(sKey), GetKey(ivSecret));
+                   
+
+                }
+            }
         }
     }
 }
